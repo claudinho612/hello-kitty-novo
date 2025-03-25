@@ -1,4 +1,4 @@
-[Uploading inde<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -62,6 +62,12 @@
     </div>
 
     <script>
+        // Definindo as URLs das imagens
+        const img1 = "{{ url_for('static', filename='hello_kitty_1.png') }}";
+        const img2 = "{{ url_for('static', filename='hello_kitty_2.png') }}";
+        const img3 = "{{ url_for('static', filename='hello_kitty_3.png') }}";
+        const img4 = "{{ url_for('static', filename='hello_kitty_4.png') }}";
+
         // Função que faz a imagem "pular" aleatoriamente
         function fazerImagemPular(imagemSrc) {
             var imagem = document.getElementById('helloKitty');
@@ -91,34 +97,5 @@
             var resposta = document.querySelector('input[name="resposta"]').value.toLowerCase();
 
             if (resposta === 'n') {
-                // Se a resposta for "N", faz a imagem pular e alternar entre a imagem 2 e a imagem 3
-                fazerImagemPular("{{ url_for('static', filename='hello_kitty_3.png') }}");
-                document.querySelector('#resultado').textContent = "Ataaaa você é normal, agora a Hello Kitty está feliz e saltitante!!!"; // Feedback visual
-            } else if (resposta === 'eu sou voce') {
-                document.querySelector('#resultado').textContent = "OLÁ MEU CRIADOR";
-            } else if (resposta === 'hello kitty') {
-                document.querySelector('#resultado').textContent = "oiiiii";
-            } else if (resposta === 's') {
-                // Se a resposta for "S", mostra a imagem 1
-                var imagem = document.getElementById('helloKitty');
-                imagem.src = "{{ url_for('static', filename='hello_kitty_1.png') }}";
-                imagem.className = "imagem1"; // Adiciona a classe para a imagem 1
-                document.querySelector('#resultado').textContent = "HAHAHAHAHAHHA, SEU BIXO!!!"; // Feedback visual para resposta 'S'
-            } else if (resposta === 'talvez') {
-                // Se a resposta for "talvez", mostra a imagem 4 e a mensagem
-                var imagem = document.getElementById('helloKitty');
-                imagem.src = "{{ url_for('static', filename='hello_kitty_4.png') }}"; // Altera para a imagem 4
-                imagem.className = ""; // Remove a classe para a imagem 3
-                document.querySelector('#resultado').textContent = "pau no seu cu"; // Mensagem para resposta 'talvez'
-            } else if (resposta === 'não te interessa') {
-                // Se a resposta for "não te interessa", faz a imagem 4 pular
-                fazerImagemPular("{{ url_for('static', filename='hello_kitty_4.png') }}"); // Chama a função para fazer a imagem 4 pular
-                document.querySelector('#resultado').textContent = "VAI TOMAR NO CU SEU FILHO DA PUTA, NÃO QUER RESPONDER? VAI SE FUDERRRRRR"; // Mensagem para resposta 'não te interessa'
-            } else {
-                document.querySelector('#resultado').textContent = "Resposta inválida!"; // Mensagem para resposta inválida
-            }
-        };
-    </script>
-</body>
-</html>
-x.html…]()
+                // Se a resposta for "N", faz a imagem pular
+                fazerImagem
